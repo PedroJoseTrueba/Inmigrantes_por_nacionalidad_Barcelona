@@ -3,7 +3,7 @@ import pandas as pd
 import plotly_express as px
 
 # Cargar el archivo CSV con el separador ;
-df = pd.read_csv(r"/Users/pedrotruebaplaza/Desktop/materia_Triple_Ten/inmigrantes_por_pais_Barcelona/2022_pad_imm_mdbas_sexe_edat-q_nacionalitat-g (2).csv", sep=';')
+df = pd.read_csv("inmigrantes_nacionalidad_edad_barcelona.csv", sep=';') 
 
 st.header('Población de Barcelona')
 
