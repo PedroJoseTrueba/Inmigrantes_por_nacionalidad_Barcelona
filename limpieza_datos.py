@@ -56,23 +56,5 @@ compra_venta_agrupado = compra_venta.groupby(['Nom_Districte', 'Nom_Barri']).agg
 # Mostrar el DataFrame resultante
 print(compra_venta_agrupado)
 
+print(compra_venta.info())
 
-
-
-
-#cambiar a 
-
-# Eliminar la columna del trimestre
-#df = compra_venta.drop(columns=['Trimestre'])
-
-# Convertir la columna 'Any' a tipo datetime
-#compra_venta['Any'] = pd.to_datetime(df['Any'])
-
-# Eliminar filas con valores no numéricos en la columna 'Valor' y convertirlos a None
-#compra_venta['Valor'] = pd.to_numeric(compra_venta['Valor'], errors='coerce')
-
-# Agrupar por año y calcular el promedio del valor del precio de la vivienda
-#df_promedio_por_año = compra_venta.groupby(compra_venta['Any'].dt.year)['Valor'].mean()
-
-# Mostrar el resultado
-#print(df_promedio_por_año)
