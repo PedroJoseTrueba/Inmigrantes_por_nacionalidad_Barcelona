@@ -1,28 +1,32 @@
-from limpieza_datos import compra_venta
 import streamlit as st
-import pandas as pd
-import graficos_de_precio_por_distrito 
-    
+from funciones_de_graficos import graficos_por_distrito, graficos_por_barrio
+from graficos_precio_total_vivienda_barrios_en_cada_distrito import crear_grafico_precio_total_por_barrio, figuras_por_distrito
 
 def main():
     # Título de la aplicación
-    st.title('Visualización de precios de vivienda por distrito')
+    st.title('Explorando los Precios de Vivienda en Barcelona en el Año 2023')
+    
+    # Agregar la imagen al inicio de la página y hacerla más grande
+    st.image("mapa_Barcelona_barrios_y_distritos_con_fondo_celeste.svg", width=800)
 
-    # Crear los gráficos
-    fig_precio_total = graficos_de_precio_por_distrito.crear_grafico_precio_total_por_distrito(compra_venta)
-    fig_nou = graficos_de_precio_por_distrito.crear_grafico_nou_por_distrito(compra_venta)
-    fig_usat = graficos_de_precio_por_distrito.crear_grafico_usat_por_distrito(compra_venta)
-    fig_precio_por_m2 = graficos_de_precio_por_distrito.crear_grafico_precio_por_m2_por_distrito(compra_venta)
-    fig_precio_por_m2_nuevo = graficos_de_precio_por_distrito.crear_grafico_precio_por_m2_por_distrito_nuevo(compra_venta)
-    fig_precio_por_m2_usado = graficos_de_precio_por_distrito.crear_grafico_precio_por_m2_por_distrito_usado(compra_venta)
+    # Botones para seleccionar grupo de gráficos
+    if st.button('Graficar precio de vivienda por distrito'):
+        figuras_distrito = graficos_por_distrito()
+        for nombre_grafico, figura in figuras_distrito.items():
+            st.subheader(nombre_grafico)
+            st.plotly_chart(figura)
 
-    # Mostrar los gráficos en la aplicación
-    st.plotly_chart(fig_precio_total)
-    st.plotly_chart(fig_nou)
-    st.plotly_chart(fig_usat)
-    st.plotly_chart(fig_precio_por_m2)
-    st.plotly_chart(fig_precio_por_m2_nuevo)
-    st.plotly_chart(fig_precio_por_m2_usado)
+    if st.button('Graficar precio de vivienda por barrio'):
+        figuras_barrio = graficos_por_barrio()
+        for nombre_grafico, figura in figuras_barrio.items():
+            st.subheader(nombre_grafico)
+            st.plotly_chart(figura)
+            
+    # Botones para seleccionar grupo de gráficos
+    if st.button('Mostrar gráficos de precios por barrio en cada distrito'):
+        for nombre_grafico, figura in figuras_por_distrito.items():
+            st.subheader(nombre_grafico)
+            st.plotly_chart(figura)
 
 if __name__ == "__main__":
     main()
