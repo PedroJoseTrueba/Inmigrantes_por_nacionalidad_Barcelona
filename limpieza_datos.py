@@ -1,16 +1,9 @@
 import pandas as pd
 
-# URL del primer archivo CSV
-url_csv_1 = 'https://opendata-ajuntament.barcelona.cat/data/es/dataset/est-mercat-immobiliari-compravenda-preu-total/resource/5a86c311-4363-4a20-a1e7-fbb867659a3f/download/est-mercat-immobiliari-compravenda-preu-total.csv'
-
-# URL del segundo archivo CSV
-url_csv_2 = 'https://opendata-ajuntament.barcelona.cat/data/es/dataset/est-mercat-immobiliari-lloguer-mitja-mensual/resource/8148fe53-6bb4-42ca-98df-93e6b723dca9/download/est-mercat-immobiliari-lloguer-mitja-mensual.csv'
 
 # Leer el primer archivo CSV desde la URL
-compra_venta = pd.read_csv(url_csv_1)
+compra_venta = pd.read_csv('/Users/pedrotruebaplaza/Desktop/materia_Triple_Ten/Proyecto4_inmigrantes_por_pais_Barcelona/est-mercat-immobiliari-compravenda-preu-total - est-mercat-immobiliari-compravenda-preu-total.csv')
 
-# Leer el segundo archivo CSV desde la URL
-alquiler = pd.read_csv(url_csv_2)
 
 print(compra_venta.sample(10))
 #Convertir trimestre y año a datetime
