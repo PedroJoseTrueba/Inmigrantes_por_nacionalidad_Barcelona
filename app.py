@@ -1,8 +1,8 @@
 import streamlit as st
-from funciones_de_graficos import graficos_por_distrito, graficos_por_barrio
-from graficos_precio_total_vivienda_barrios_en_cada_distrito import crear_grafico_precio_total_por_barrio, figuras_por_distrito
-from graficos_de_caja import graficar_diagramas_cajas_todos_distritos 
-from limpieza_datos import compra_venta
+from src.funciones_de_graficos import graficos_por_distrito, graficos_por_barrio
+from src.graficos_precio_total_vivienda_barrios_en_cada_distrito import crear_grafico_precio_total_por_barrio, figuras_por_distrito
+from src.graficos_de_caja import graficar_diagramas_cajas_todos_distritos 
+from src.limpieza_datos import compra_venta
 
 def main():
     # Mensaje introductorio para la aplicación
@@ -22,7 +22,7 @@ El mapa interactivo que se muestra a continuación representa los 10 distritos d
 
     
     # Agregar la imagen al inicio de la página y hacerla más grande
-    st.image("mapa_Barcelona_barrios_y_distritos_con_fondo_celeste.svg", width=800)
+    st.image("images/mapa_Barcelona_barrios_y_distritos_con_fondo_celeste.svg", width=800)
 
     # Opciones con radio buttons
     opcion = st.radio("Selecciona una opción:", 
@@ -56,5 +56,4 @@ El mapa interactivo que se muestra a continuación representa los 10 distritos d
 
 if __name__ == "__main__":
     main()
-
 

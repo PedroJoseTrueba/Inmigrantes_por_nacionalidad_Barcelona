@@ -1,6 +1,6 @@
 import pandas as pd
 import plotly.express as px
-from limpieza_datos import compra_venta
+from src.limpieza_datos import compra_venta
 
 def crear_grafico_precio_total_por_barrio(dataframe, distrito, tipo_datos, titulo):
     # Filtrar los datos para obtener solo los barrios del distrito especificado

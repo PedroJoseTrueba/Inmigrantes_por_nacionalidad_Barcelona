@@ -1,4 +1,4 @@
-from limpieza_datos import compra_venta
+from src.limpieza_datos import compra_venta
 import pandas as pd
 import plotly.express as px
 

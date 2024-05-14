@@ -1,7 +1,7 @@
-from limpieza_datos import compra_venta
+from src.limpieza_datos import compra_venta
 import plotly.express as px
-import graficos_de_precio_por_distrito 
-import graficos_de_precio_por_barrio
+import src.graficos_de_precio_por_distrito as graficos_de_precio_por_distrito 
+import src.graficos_de_precio_por_barrio as graficos_de_precio_por_barrio
 
 def graficos_por_distrito():
     figuras_distrito = {}

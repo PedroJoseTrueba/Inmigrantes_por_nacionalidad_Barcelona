@@ -2,7 +2,7 @@ import pandas as pd
 
 
 # Leer el primer archivo CSV desde la URL
-compra_venta = pd.read_csv('est-mercat-immobiliari-compravenda-preu-total - est-mercat-immobiliari-compravenda-preu-total.csv')
+compra_venta = pd.read_csv('Datasets/est-mercat-immobiliari-compravenda-preu-total - est-mercat-immobiliari-compravenda-preu-total.csv')
 
 
 print(compra_venta.sample(10))

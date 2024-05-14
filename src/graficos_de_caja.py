@@ -1,7 +1,7 @@
 import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
-from limpieza_datos import compra_venta
+from src.limpieza_datos import compra_venta
 
 def graficar_diagrama_caja_bigotes(df, columna, titulo):
     """
