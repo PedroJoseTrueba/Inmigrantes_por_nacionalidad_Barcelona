@@ -1,6 +1,5 @@
+import streamlit as st
 import plotly.graph_objects as go
-import pandas as pd
-import plotly.express as px
 from src.limpieza_datos import compra_venta
 
 def graficar_diagrama_caja_bigotes(df, columna, titulo):
@@ -49,12 +48,14 @@ def graficar_diagramas_cajas_todos_distritos(df):
     Retorna:
         - figuras: Un diccionario que contiene objetos de figura Plotly para cada columna.
     """
-    tipos_datos_titulo = {'Total_Milers': 'Variabilidad del Precio de la Vivienda por distrito',
-                          'Nou_Milers': ' Variabilidad del Precio de Viviendas Nuevas por distrito',
-                          'Usat_Milers': 'Variabilidad del Precio de Viviendas Usadas por distrito',
-                          'Total_Euros_m2': 'Variabilidad del Precio de la vivienda por Metro Cuadrado en cada distrito',
-                          'Nou_Euros_m2': 'Variabilidad del Precio de Viviendas Nuevas por Metro Cuadrado en cada distrito',
-                          'Usat_Euros_m2': 'Variabilidad del Precio de Viviendas Usadas por Metro Cuadrado en cada distrito'}
+    tipos_datos_titulo = {
+        'Total_Milers': 'Variabilidad del Precio de todas las Viviendas por distrito',
+        'Nou_Milers': 'Variabilidad del Precio de Viviendas Nuevas por distrito',
+        'Usat_Milers': 'Variabilidad del Precio de Viviendas Usadas por distrito',
+        'Total_Euros_m2': 'Variabilidad del Precio de todas las viviendas por Metro Cuadrado en cada distrito',
+        'Nou_Euros_m2': 'Variabilidad del Precio de Viviendas Nuevas por Metro Cuadrado en cada distrito',
+        'Usat_Euros_m2': 'Variabilidad del Precio de Viviendas Usadas por Metro Cuadrado en cada distrito'
+    }
     
     figuras = {}
     
@@ -63,13 +64,9 @@ def graficar_diagramas_cajas_todos_distritos(df):
     
     for distrito in distritos:
         for columna, titulo in tipos_datos_titulo.items():
-            titulo = f'{titulo}' 
             figuras[columna] = graficar_diagrama_caja_bigotes(df, columna, titulo)
     
     return figuras
 
 # Ejemplo de uso
 figuras_diagramas_cajas = graficar_diagramas_cajas_todos_distritos(compra_venta)
-
-
-        

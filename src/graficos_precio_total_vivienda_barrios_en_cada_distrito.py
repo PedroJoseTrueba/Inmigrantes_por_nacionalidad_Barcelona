@@ -40,16 +40,9 @@ tipos_datos = {'Total_Milers': 'Precio Total por Barrio en el distrito',
                'Nou_Euros_m2': 'Precio de Viviendas Nuevas por Metro Cuadrado por Barrio en el distrito',
                'Usat_Euros_m2': 'Precio de Viviendas Usadas por Metro Cuadrado por Barrio en el distrito'}
 
-# Generar los 60 gráficos
+# Generar los gráficos para cada distrito y tipo de datos
 figuras_por_distrito = {}
 for distrito in distritos:
     for tipo_dato, titulo in tipos_datos.items():
         titulo = f"{titulo} {distrito}"  # Agregar el nombre del distrito al final del título
         figuras_por_distrito[titulo] = crear_grafico_precio_total_por_barrio(compra_venta, distrito, tipo_dato, titulo)
-
-
-
-
-
-
-
